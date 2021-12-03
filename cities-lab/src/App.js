@@ -6,7 +6,10 @@ import "./styles.css";
 export default function App() {
   // USE useState TO CREATE  [bigImage, setBigImage]
   // AND SET IT TO THE IMAGE URL OF THE FIRST ELEMENT IN THE ARRAY
-
+ const [bigImage, setBigImage] = useState({
+   img: imageArr[0].img,
+   city: imagesArr[0].city
+ })
   // CREATE A HANDLE CLICK FUNCTION THAT ACCEPTS AN IMAGE URL
   // THE FUNCTION SHOULD CALL setBigImage AND PASS IT THE URL
 
@@ -20,7 +23,7 @@ export default function App() {
       <div id="wrapper">
         <div id="thumbnails">{/* RENDER THE IMAGES ARRAY  */}</div>
         {/* THE SRC IMAGE URL SHOULD BE SET TO THE VALUE THAT IS STORED IN bigImage */}
-        {/* <img src="" id="bigimage" alt='bigImaage'/> */}
+        <img src={bigImage} id="bigimage" alt="bigImage"/>
       </div>
     </div>
   );
